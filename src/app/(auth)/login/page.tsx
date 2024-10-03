@@ -1,11 +1,11 @@
 'use client'
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { cn } from "@/lib/utils"
 import { useAuthStore } from "@/store/auth"
 import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react"
 import Link from "next/link"
-import { FormEvent, ReactNode, useState } from "react"
+import { FormEvent, useState } from "react"
+import { BottomGradient, LabelInputContainer } from "../layout"
 
 const Login = () => {
   const { login } = useAuthStore()
@@ -34,11 +34,7 @@ const Login = () => {
       <p className='mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300'>
         Login to StackFlow
         <br />
-        Don&apos;t have an account?
-        <Link href='/register' className='text-orange-500 hover:underline'>
-          Register
-        </Link>
-        with StackFlow
+        Don&apos;t have an account? <Link href='/register' className='text-orange-500 hover:underline'>Register</Link> with StackFlow
       </p>
       {error &&
         <p className='mt-8 text-center text-sm text-red-500 dark:text-red-400'>
@@ -53,8 +49,8 @@ const Login = () => {
           <Input className='text-black' id='email' name='email' placeholder='desimailing@mail.com' type='email' />
         </LabelInputContainer>
         <LabelInputContainer className='mb-4'>
-          <Label htmlFor='email'>
-            Email Address
+          <Label htmlFor='password'>
+            Password
           </Label>
           <Input className='text-black' id='password' name='password' placeholder='*********' type='password' />
         </LabelInputContainer>
@@ -83,18 +79,5 @@ const Login = () => {
     </div >
   )
 }
-
-const BottomGradient = () => (
-  <>
-    <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-gradient-to-r from:transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
-    <span className="absolute inset-x-10 -bottom-px block mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
-  </>
-)
-
-const LabelInputContainer = ({ children, className }: { children: ReactNode, className?: string }) => (
-  <div className={cn('flex w-full flex-col space-y-2', className)}>
-    {children}
-  </div>
-)
 
 export default Login
