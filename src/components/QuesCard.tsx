@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef, useState } from "react"
 import { BorderBeam } from "./ui/border-beam"
 import { Models } from "appwrite"
@@ -11,7 +13,7 @@ const QuesCard = ({ ques }: { ques: Models.Document }) => {
     const ref = useRef<HTMLDivElement>(null)
     // 
     useEffect(() => {
-        if (ref.current) { setHeight(ref.current.clientHeight) }
+        if (ref.current) setHeight(ref.current.clientHeight)
     }, [])
     return (
         <div ref={ref} className="relative flex flex-col gap-4 overflow-hidden rounded-xl border border-white/20 bg-white/5 p-4 duration-200 hover:bg-white/10 sm:flex-row">
