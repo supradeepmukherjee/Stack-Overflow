@@ -1,3 +1,5 @@
+'use client'
+
 import { FloatingNav } from "@/components/ui/floating-navbar"
 import { useAuthStore } from "@/store/auth"
 import slugify from "@/utils/slugify"
