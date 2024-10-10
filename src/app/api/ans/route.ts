@@ -22,7 +22,10 @@ export async function POST(req: NextRequest) {
         return NextResponse.json(res, { status: 201 })
     } catch (err: any) {
         console.log(err)
-        return NextResponse.json({ err: err?.msg || 'Error creating answer' }, { status: err?.msg | err?.code || 500 })
+        return NextResponse.json(
+            { err: err?.msg || 'Error creating answer' },
+            { status: err?.status | err?.code || 500 }
+        )
     }
 }
 
@@ -36,6 +39,9 @@ export async function DELETE(req: NextRequest) {
         return NextResponse.json({ data: res }, { status: 200 })
     } catch (err: any) {
         console.log(err)
-        return NextResponse.json({ err: err?.msg || 'Error deleting answer' }, { status: err?.msg | err?.code || 500 })
+        return NextResponse.json(
+            { err: err?.msg || 'Error deleting answer' },
+            { status: err?.status | err?.code || 500 }
+        )
     }
 }
