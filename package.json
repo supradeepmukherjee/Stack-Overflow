@@ -17,7 +17,7 @@
     "canvas-confetti": "^1.9.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.11.1",
+    "framer-motion": "^11.11.7",
     "immer": "^10.1.1",
     "lucide-react": "^0.446.0",
     "next": "14.2.3",
