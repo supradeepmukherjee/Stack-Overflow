@@ -20,6 +20,7 @@
     "framer-motion": "^11.11.7",
     "immer": "^10.1.1",
     "lucide-react": "^0.446.0",
+    "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.3",
     "next-themes": "^0.3.0",
     "node-appwrite": "^14.1.0",

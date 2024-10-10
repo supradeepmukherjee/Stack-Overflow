@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import getOrCreateDB from "./models/server/seeder";
 import getOrCreateStorage from "./models/server/storageSetup";
 
-export async function middleware(req: NextRequest) {
+export async function middleware() {
     await Promise.all([getOrCreateDB(),getOrCreateStorage()])
     return NextResponse.next()
 }
