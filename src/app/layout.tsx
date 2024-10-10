@@ -1,10 +1,11 @@
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Header from "./components/Header";
 import "./globals.css";
+import dynamic from "next/dynamic";
 
 const inter = Inter({ subsets: ["latin"] });
+const Header = dynamic(() => import('./components/Header'), { ssr: false });
 
 export const metadata: Metadata = {
   title: "Create Next App",
